@@ -513,7 +513,7 @@ export const calculateInternalNGS = (product: any, overrideNova?: number, overri
 
     let res = { 
       score: Math.max(0, Math.min(100, Math.round(NGS_final))), 
-      components: { N: Math.round(N), I: Math.round(I), P: Math.round(P), A: Math.round(A_age) }, 
+      components: { N: Math.round(N_capped), I: Math.round(I), P: Math.round(P), A: Math.round(A_age) }, 
       scale: scale,
       cliffPenalty: cliffPenalty,
       serving_reality_check: servingRealityCheck,

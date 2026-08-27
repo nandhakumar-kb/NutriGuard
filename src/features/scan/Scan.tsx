@@ -145,7 +145,7 @@ export function Scan() {
 
       setProduct(p);
     }
-  }, [activeId, dynamicProduct]);
+  }, [activeId, dynamicProduct, selectedAgeGroup]);
 
   if (!activeId || !product || !scoreData) {
     return (

@@ -37,8 +37,6 @@ export function ExplainabilityCard({ product, breakdown, ageGroup }: Explainabil
     }
   }, [domNutrient, ageGroup]);
 
-  if (!domNutrient) return null;
-
   // 2. Fetch Counterfactuals
   const mfrCounterfactual = getManufacturerCounterfactual(product, ageGroup);
   
@@ -56,6 +54,8 @@ export function ExplainabilityCard({ product, breakdown, ageGroup }: Explainabil
 
   // 3. Compute Classification Sensitivity
   const sensitivity = getClassificationSensitivity(product, ageGroup);
+
+  if (!domNutrient) return null;
 
   // Formatting helper
   const formatKey = (key: string) => key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
