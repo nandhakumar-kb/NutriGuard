@@ -3802,8 +3802,8 @@
     "category": "Chocolates",
     "image": "kitkat.png",
     "barcode": "8901058904741",
-    "serving_size": "9.6 g",
-    "servings_per_pack": 10,
+    "serving_size": "12.8 g",
+    "servings_per_pack": 1,
     "nutrition": {
       "calories": 438,
       "protein": 6.4,
@@ -3851,7 +3851,7 @@
     "ingredients_count": 11,
     "additives_count": 1,
     "price": 10,
-    "net_weight": "96g",
+    "net_weight": "12.8g",
     "indulgence_tier": "chocolate",
     "flavor_profile": "sweet",
     "second_most_likely_category": "Protein Bars"
