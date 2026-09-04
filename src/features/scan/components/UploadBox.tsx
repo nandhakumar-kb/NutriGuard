@@ -10,6 +10,7 @@ export function UploadBox({ onUploadSuccess }: { onUploadSuccess: (productId: nu
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null); // preview of uploaded image
   const { setDynamicProduct } = useAppStore();
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -18,8 +19,13 @@ export function UploadBox({ onUploadSuccess }: { onUploadSuccess: (productId: nu
     setError(null);
     setIsUploading(true);
     
+    // Create a preview URL for the uploaded image
+    const uploadedFile = acceptedFiles[0];
+    const preview = URL.createObjectURL(uploadedFile);
+    setPreviewUrl(preview);
+
     // Attempt to match the uploaded file name to a product in the database
-    let fileName = acceptedFiles[0].name.toLowerCase();
+    let fileName = uploadedFile.name.toLowerCase();
     
     // If the user uploads a back-of-pack label (e.g., '5 star label.png'), 
     // strip the ' label' part so it correctly matches the front-of-pack image name ('5 star.png')
@@ -30,6 +36,8 @@ export function UploadBox({ onUploadSuccess }: { onUploadSuccess: (productId: nu
     );
     
     if (matchedProduct) {
+      // Attach the preview image URL to the dynamic product (if needed)
+      setDynamicProduct({ ...matchedProduct, imageUrl: previewUrl });
       setTimeout(() => {
         setIsUploading(false);
         setSuccess(true);
@@ -40,7 +48,8 @@ export function UploadBox({ onUploadSuccess }: { onUploadSuccess: (productId: nu
     } else {
       analyzeProductImage(acceptedFiles[0]).then((ocrData) => {
         ocrData.id = 'custom';
-        setDynamicProduct(ocrData);
+        // Attach preview image URL to the custom product data
+        setDynamicProduct({ ...ocrData, imageUrl: preview });
         setIsUploading(false);
         setSuccess(true);
         setTimeout(() => {
@@ -78,6 +87,11 @@ export function UploadBox({ onUploadSuccess }: { onUploadSuccess: (productId: nu
             </div>
             <h3 className="text-xl font-semibold text-gray-900">Analyzing Product...</h3>
             <p className="text-sm text-gray-500">Extracting nutrition facts and ingredients</p>
+          </>
+        ) : previewUrl && !error ? (
+          <>
+            <img src={previewUrl} alt="Uploaded product" className="mx-auto max-h-48 object-contain mb-4" />
+            <h3 className="text-xl font-semibold text-gray-900">Image Ready</h3>
           </>
         ) : error ? (
           <>
