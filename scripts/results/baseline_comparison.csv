@@ -1,0 +1,101 @@
+Product,B1_Score,B1_Grade,B2_Score,B2_Grade,B3_Score,B3_Grade,B4_Score,B4_Grade
+"5 Star",67,B,52,C+,50,C+,23,D+
+"Amul 99% Cacao",77,B+,66,B,66,B,36,C-
+"Amul Bitter Chocolate",71,B+,58,C+,58,C+,29,D+
+"Amul Buttermilk",92,A+,82,A,82,A,60,B
+"Amul Dark Chocolate",68,B,54,C+,54,C+,26,D+
+"Amul Sugar Free Chocolate",78,B+,66,B,66,B,37,C-
+"Amul Taaza Milk",90,A+,90,A+,90,A+,90,A+
+"Amul Tricone",78,B+,66,B,66,B,34,C-
+"Arokya Full Cream Milk",93,A+,93,A+,93,A+,93,A+
+"Arun Butterscotch",74,B+,60,B,60,B,27,D+
+"Arun Chocolate Ice Cream",72,B+,57,C+,57,C+,28,D+
+"Bingo Original",79,B+,69,B,69,B,36,C-
+"Aquafina Water",99,A+,99,A+,99,A+,99,A+
+"Boost",76,B+,65,B,65,B,29,D+
+"Bourbon",69,B,52,C+,51,C+,26,D+
+"Britannia Good Day Butter",74,B+,58,C+,57,C+,25,D+
+"Britannia Good Day Cashew",74,B+,58,C+,57,C+,24,D+
+"Britannia Good Day Choco Chip",70,B+,54,C+,53,C+,18,D
+"Britannia Good Day Pista Badam",74,B+,58,C+,56,C+,19,D
+"Britannia Marie Gold",74,B+,59,C+,58,C+,21,D+
+"Britannia NutriChoice 5 Grain",76,B+,63,B,63,B,29,D+
+"Britannia NutriChoice Digestive",80,A,67,B,67,B,30,C-
+"Britannia NutriChoice Milk Biscuits",76,B+,63,B,63,B,26,D+
+"Britannia NutriChoice Orange Biscuits",78,B+,65,B,65,B,25,D+
+"Britannia Tiger",71,B+,55,C+,54,C+,15,D
+"Britannia Treat Jim Jam",70,B+,54,C+,52,C+,16,D
+"Britannia Treat Orange Creme",70,B+,54,C+,54,C+,16,D
+"Cadbury Bournville Cranberry",67,B,53,C+,52,C+,21,D+
+"Cadbury Dairy Milk",67,B,53,C+,51,C+,21,D+
+"Cadbury Perk",67,B,53,C+,52,C+,16,D
+"Cavin's Chocolate Milkshake",80,A,68,B,68,B,37,C-
+"Cavin's Spiced Buttermilk",93,A+,84,A,84,A,60,B
+"Cavin's Vanilla Milkshake",81,A,70,B+,70,B+,37,C-
+"Coca-Cola",82,A,71,B+,70,B+,36,C-
+"Complan Royale Chocolate",71,B+,59,C+,59,C+,29,D+
+"Dark Fantasy Chocolate Milkshake",80,A,67,B,67,B,36,C-
+"Diet Coke",83,A,74,B+,72,B+,31,C-
+"Diet Pepsi",83,A,74,B+,72,B+,30,C-
+"Farmley Almond Kernels",89,A,89,A,89,A,89,A
+"Farmley Pumpkin Seeds",87,A,87,A,87,A,87,A
+"Farmley Sunflower Seeds",89,A,89,A,89,A,89,A
+"Frooti Mango Drink",78,B+,68,B,66,B,29,D+
+"Happilo Premium Californian Almonds",90,A+,90,A+,90,A+,90,A+
+"Hershey's Chocolate Milkshake",73,B+,61,B,61,B,28,D+
+"Hershey's Vanilla Milkshake",74,B+,62,B,61,B,27,D+
+"Horlicks Classic Malt",73,B+,63,B,63,B,29,D+
+"Kellogg's Chocos",77,B+,66,B,64,B,38,C-
+"Kellogg's Muesli",79,B+,66,B,64,B,34,C-
+"Kellogg's Muesli Fruit Nut & Seeds",80,A,71,B+,69,B,38,C-
+"Kurkure Chilli Chatka",78,B+,69,B,69,B,36,C-
+"Kurkure Masala Munch",83,A,72,B+,72,B+,39,C-
+"Lay's American Style Cream & Onion",79,B+,67,B,67,B,36,C-
+"Lay's Chile Limon",78,B+,68,B,68,B,36,C-
+"Lay's Classic",79,B+,70,B+,70,B+,38,C-
+"Lay's Hot & Sweet Chilli",79,B+,67,B,67,B,36,C-
+"Lay's India's Magic Masala",79,B+,69,B,69,B,27,D+
+"Lay's Tomato Tango",79,B+,68,B,68,B,37,C-
+"Maaza",79,B+,68,B,67,B,30,C-
+"Magnum Almond",79,B+,65,B,65,B,36,C-
+"Magnum Chocolate",78,B+,67,B,67,B,37,C-
+"Makino Roasted Masala Cashews",85,A,77,B+,77,B+,55,C+
+"Manna Health Mix",93,A+,93,A+,93,A+,93,A+
+"MilkyMist Buttermilk",89,A,80,A,80,A,63,B
+"MilkyMist Chocolate Milkshake",79,B+,69,B,69,B,36,C-
+"MilkyMist Ice Cream Bar",83,A,69,B,69,B,40,C
+"MilkyMist Vanilla Milkshake",81,A,70,B+,70,B+,37,C-
+"Mirinda",83,A,71,B+,70,B+,29,D+
+"Nandini Toned Milk",92,A+,92,A+,92,A+,92,A+
+"Nestlé KitKat",70,B+,57,C+,55,C+,26,D+
+"Nestlé Milkybar",68,B,58,C+,58,C+,30,C-
+"Nestlé Munch",68,B,54,C+,52,C+,23,D+
+"Oreo Chocolate Creme",69,B,54,C+,52,C+,19,D
+"Oreo Vanilla Creme",69,B,54,C+,52,C+,28,D+
+"Paper Boat Aamras",82,A,72,B+,70,B+,42,C
+"Paper Boat Coconut Water",83,A,73,B+,71,B+,35,C-
+"Parle Hide & Seek",71,B+,57,C+,56,C+,30,C-
+"Pepsi",81,A,71,B+,69,B,33,C-
+"Pluckk Tender Coconut Water",96,A+,96,A+,96,A+,96,A+
+"Pran Potata Spicy Biscuit",74,B+,61,B,61,B,33,C-
+"Raw Pressery Coconut Water",91,A+,91,A+,91,A+,83,A
+"Real Coconut Water",94,A+,86,A,86,A,60,B
+"Slice Mango Drink",77,B+,67,B,65,B,26,D+
+"Sunfeast Dark Fantasy Choco Fills",69,B,53,C+,52,C+,19,D
+"Taali Masala Cashews",82,A,70,B+,70,B+,38,C-
+"Tata Sampann Premium Almonds",91,A+,91,A+,91,A+,91,A+
+"Tata Soulfull Choco Muesli",80,A,71,B+,69,B,41,C
+"Tata Soulfull Millet Muesli",83,A,74,B+,72,B+,44,C
+"Thums Up",82,A,71,B+,69,B,36,C-
+"Too Yumm NutriChips",82,A,72,B+,72,B+,36,C-
+"Too Yumm Veggix",83,A,72,B+,72,B+,40,C
+"True Elements Raw Pumpkin Seeds",86,A,86,A,86,A,86,A
+"True Elements Raw Sunflower Seeds",89,A,89,A,89,A,89,A
+"Yoga Bar Blueberry Protein Bar",80,A,71,B+,71,B+,39,C-
+"Yoga Bar Choco Chunk Protein Bar",83,A,75,B+,75,B+,42,C
+"Yoga Bar Dark Chocolate Protein Bar",83,A,73,B+,73,B+,45,C
+"Yoga Bar Fruit & Nut Protein Bar",78,B+,67,B,67,B,36,C-
+"Yoga Bar Millet Muesli",83,A,74,B+,72,B+,41,C
+"Yoga Bar Muesli",83,A,75,B+,73,B+,41,C
+"Yoga Bar Nuts & Fruits Muesli",83,A,75,B+,73,B+,42,C
+"Yoga Bar Pumpkin Seeds",91,A+,91,A+,91,A+,91,A+

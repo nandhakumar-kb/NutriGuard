@@ -141,4 +141,32 @@ describe('NutriGuard Score Calculator - Edge Cases', () => {
     expect(result).toBeDefined();
     expect(result.overall).toBeGreaterThanOrEqual(0);
   });
+
+  it('Regression Protection: calculateNutriGuardScore(product) === calculateNutriGuardScore(product, {})', () => {
+    const product = {
+      "name": "Test Product",
+      "category": "Chocolates",
+      "nova": 4,
+      "nutrition": {
+        "calories": 444, "protein": 3.3, "fiber": 0, "totalSugars": 55.5,
+        "addedSugars": 52.6, "totalFat": 15.9, "saturatedFat": 10.1,
+        "transFat": 0.1, "cholesterol": 4.9, "sodium": 170
+      },
+      "ingredients": ["Sugar", "Cocoa Solids"],
+      "additives": [],
+      "allergens": ["None"]
+    };
+    
+    const original = calculateNutriGuardScore(product);
+    const withOptions = calculateNutriGuardScore(product, {});
+    
+    expect(original).toEqual(withOptions);
+    
+    // Explicitly check fields just in case
+    expect(original.overall).toBe(withOptions.overall);
+    expect(original.components.N).toBe(withOptions.components.N);
+    expect(original.components.I).toBe(withOptions.components.I);
+    expect(original.components.P).toBe(withOptions.components.P);
+    expect(original.components.A).toBe(withOptions.components.A);
+  });
 });

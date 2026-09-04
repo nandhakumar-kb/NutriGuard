@@ -20,6 +20,7 @@ export interface ManufacturerActionData {
   actions: RecommendationAction[];
   potentialScore: number;
   potentialGrade: string;
+  iterations: number;
 }
 
 export const getManufacturerCounterfactual = (product: any, ageGroup: 'child'|'teen'|'adult'|'elderly'): ManufacturerActionData | null => {
@@ -57,12 +58,13 @@ export const getManufacturerCounterfactual = (product: any, ageGroup: 'child'|'t
          });
       }
       
-      return {
-        summary: `Manufacturer Action: Reduce ${statements.join(' and ')} to reach a ${currentGrade} grade.`,
-        actions,
-        potentialScore: currentScore,
-        potentialGrade: currentGrade
-      };
+        return {
+          summary: `Successfully found counterfactual improvements to reach grade ${currentGrade} by modifying ${Object.keys(reductions).length} dominant nutritional factors.`,
+          actions,
+          potentialScore: currentScore,
+          potentialGrade: currentGrade,
+          iterations: step
+        };
     }
     
     let worstKey = currentBreakdown.ageWise[ageGroup].dominantNutrient?.key;
@@ -134,7 +136,7 @@ export const getConsumerAlternative = (product: any, ageGroup: 'child'|'teen'|'a
 // i.e. categories a human or OCR step could realistically confuse this product
 // with. This is deliberately curated rather than "nearest by name," since the
 // point is "what could someone actually get wrong here," not textual similarity.
-const PLAUSIBLE_CATEGORY_CONFUSION: Record<string, string[]> = {
+export const PLAUSIBLE_CATEGORY_CONFUSION: Record<string, string[]> = {
   'Biscuits': ['Cream Biscuits'],
   'Cream Biscuits': ['Biscuits', 'Chocolates'],
   'Chips & Snacks': ['Muesli & Cereals'],

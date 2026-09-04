@@ -1,6 +1,16 @@
 import type { ScoreBreakdown, AgeScore } from '@/types';
 import { getNutrient, getDeclaredNutrient, type NutrientKey } from './normalizeNutrient';
 
+export interface AblationOptions {
+  disableN?: boolean;
+  disableI?: boolean;
+  disableP?: boolean;
+  disableA?: boolean;
+  disableNova?: boolean;
+  disableAge?: boolean;
+  forceNova?: 1 | 2 | 3 | 4;
+}
+
 const DANGER_CLIFF_CHILD_THRESHOLD = 150;
 const DANGER_CLIFF_ELDERLY_THRESHOLD = 100;
 const DANGER_CLIFF_PENALTY = 10;
@@ -167,7 +177,7 @@ export const estimateNovaGroup = (product: any): number => {
 // This function was moved to normalizeNutrient.ts
 
 // Helper: Calculate internal NGS
-export const calculateInternalNGS = (product: any, overrideNova?: number, overrideCategory?: string): { scoreBreakdown: ScoreBreakdown, missingDataError: boolean } => {
+export const calculateInternalNGS = (product: any, overrideNova?: number, overrideCategory?: string, options: AblationOptions = {}): { scoreBreakdown: ScoreBreakdown, missingDataError: boolean } => {
   const flags: string[] = [];
   
   const activeCategory = overrideCategory || product.category;
@@ -447,9 +457,10 @@ export const calculateInternalNGS = (product: any, overrideNova?: number, overri
   let adultDominantNutrient: { key: string, dv: number, subScore: number } | undefined;
 
   const calculateFinalAgeScore = (ageGroup: string): AgeScore => {
-    let nutResult = getNutritionScore(ageGroup);
+    let effectiveAgeGroup = options.disableAge ? 'adult' : ageGroup;
+    let nutResult = getNutritionScore(effectiveAgeGroup);
     let N = nutResult.score;
-    let A_age = getAdditiveScore(ageGroup);
+    let A_age = getAdditiveScore(effectiveAgeGroup);
     
     let domNutrient = {
       key: nutResult.worstKey,
@@ -478,7 +489,14 @@ export const calculateInternalNGS = (product: any, overrideNova?: number, overri
 
     // Section 1: Decoupled Structure
     let N_capped = nova === 4 ? Math.min(N, 50) : N;
-    let NGS_pre_cliff = scale * (0.20 * I + 0.15 * P + 0.30 * A_age) + 0.35 * N_capped;
+    
+    let final_N = options.disableN ? 100 : N_capped;
+    let final_I = options.disableI ? 100 : I;
+    let final_P = options.disableP ? 100 : P;
+    let final_A = options.disableA ? 100 : A_age;
+    let final_scale = options.disableNova ? 1.0 : scale;
+
+    let NGS_pre_cliff = final_scale * (0.20 * final_I + 0.15 * final_P + 0.30 * final_A) + 0.35 * final_N;
     
     // Section 1a: Danger Cliff
     let cliffPenalty = 0;
@@ -544,8 +562,8 @@ export const calculateInternalNGS = (product: any, overrideNova?: number, overri
   };
 };
 
-export const calculateNutriGuardScore = (product: any): ScoreBreakdown => {
-  let result = calculateInternalNGS(product);
+export const calculateNutriGuardScore = (product: any, options: AblationOptions = {}): ScoreBreakdown => {
+  let result = calculateInternalNGS(product, options.forceNova, undefined, options);
   let breakdown = result.scoreBreakdown;
   let missing = result.missingDataError;
 
