@@ -1,79 +1,20 @@
-[
-  {
-    "id": "who-sugar-2015-01",
-    "source": "WHO",
-    "title": "Guideline: Sugars intake for adults and children",
-    "year": 2015,
-    "section": "Recommendation 1",
-    "nutrients": [
-      "totalSugar",
-      "addedSugar"
-    ],
-    "ageGroups": [
-      "all"
-    ],
-    "passage": "WHO recommends reducing free sugars intake to less than 10% of total daily energy intake, with additional benefit from further reduction to below 5%.",
-    "url": "https://www.who.int/publications/i/item/9789241549028"
-  },
-  {
-    "id": "icmr-nin-2020-sodium-child",
-    "source": "ICMR-NIN",
-    "title": "Nutrient Requirements for Indians — RDA and EAR",
-    "year": 2020,
-    "section": "Sodium, paediatric reference values",
-    "nutrients": [
-      "sodium"
-    ],
-    "ageGroups": [
-      "child"
-    ],
-    "passage": "Children have proportionally lower sodium tolerance than adults; excess intake in early childhood is associated with the development of salt preference and elevated blood pressure risk later in life.",
-    "url": null
-  },
-  {
-    "id": "who-sodium-2012-01",
-    "source": "WHO",
-    "title": "Guideline: Sodium intake for adults and children",
-    "year": 2012,
-    "section": "Recommendation 1",
-    "nutrients": [
-      "sodium"
-    ],
-    "ageGroups": [
-      "teen",
-      "adult",
-      "elderly"
-    ],
-    "passage": "WHO recommends a reduction in sodium intake to less than 2g/day (5g/day salt) in adults, to reduce blood pressure and risk of cardiovascular disease, stroke, and coronary heart disease.",
-    "url": "https://www.who.int/publications/i/item/9789241504836"
-  },
-  {
-    "id": "who-transfat-2018-01",
-    "source": "WHO",
-    "title": "REPLACE: Eliminating industrially-produced trans-fatty acids",
-    "year": 2018,
-    "section": "Health rationale",
-    "nutrients": [
-      "transFat"
-    ],
-    "ageGroups": [
-      "all"
-    ],
-    "passage": "Industrially produced trans fat intake is directly linked to increased risk of coronary heart disease; WHO recommends limiting trans fat to less than 1% of total energy intake.",
-    "url": null
-  },
+const fs = require('fs');
+
+const citationsFile = 'src/data/citations.json';
+const additivesFile = 'src/data/additives.json';
+
+const citations = JSON.parse(fs.readFileSync(citationsFile, 'utf8'));
+const additives = JSON.parse(fs.readFileSync(additivesFile, 'utf8'));
+
+const newCitations = [
   {
     "id": "who-calories-2015",
     "source": "WHO",
     "title": "Diet, nutrition and the prevention of chronic diseases",
     "year": 2015,
     "section": "Energy Balance",
-    "nutrients": [
-      "calories"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["calories"],
+    "ageGroups": ["all"],
     "passage": "Energy intake should balance energy expenditure. To avoid unhealthy weight gain, total fat should not exceed 30% of total energy intake.",
     "url": null
   },
@@ -83,12 +24,8 @@
     "title": "Saturated fatty acid and trans-fatty acid intake for adults and children",
     "year": 2023,
     "section": "Recommendation",
-    "nutrients": [
-      "saturatedFat"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["saturatedFat"],
+    "ageGroups": ["all"],
     "passage": "WHO recommends reducing saturated fatty acid intake to less than 10% of total energy intake.",
     "url": null
   },
@@ -98,13 +35,8 @@
     "title": "Diet and cardiovascular disease",
     "year": 2023,
     "section": "Dietary cholesterol",
-    "nutrients": [
-      "cholesterol"
-    ],
-    "ageGroups": [
-      "adult",
-      "elderly"
-    ],
+    "nutrients": ["cholesterol"],
+    "ageGroups": ["adult", "elderly"],
     "passage": "High dietary cholesterol can increase blood LDL cholesterol levels, a major risk factor for cardiovascular diseases.",
     "url": null
   },
@@ -114,12 +46,8 @@
     "title": "Food Safety and Standards (Food Products Standards and Food Additives)",
     "year": 2020,
     "section": "Caffeinated Beverages",
-    "nutrients": [
-      "caffeine"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["caffeine"],
+    "ageGroups": ["all"],
     "passage": "High caffeine intake can lead to adverse health effects such as insomnia, nervousness, and elevated heart rate, especially in vulnerable groups.",
     "url": null
   },
@@ -129,13 +57,8 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Children and Adolescents",
-    "nutrients": [
-      "calories"
-    ],
-    "ageGroups": [
-      "child",
-      "teen"
-    ],
+    "nutrients": ["calories"],
+    "ageGroups": ["child", "teen"],
     "passage": "Energy intake must be adequate for growth and development, but excess calories from highly processed foods contribute to childhood obesity.",
     "url": null
   },
@@ -145,13 +68,8 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Adults",
-    "nutrients": [
-      "fiber"
-    ],
-    "ageGroups": [
-      "adult",
-      "elderly"
-    ],
+    "nutrients": ["fiber"],
+    "ageGroups": ["adult", "elderly"],
     "passage": "Adequate dietary fiber is essential for bowel health and reducing the risk of chronic diseases such as type 2 diabetes and coronary heart disease.",
     "url": null
   },
@@ -161,12 +79,8 @@
     "title": "Protein and amino acid requirements in human nutrition",
     "year": 2007,
     "section": "Executive Summary",
-    "nutrients": [
-      "protein"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["protein"],
+    "ageGroups": ["all"],
     "passage": "Proteins are essential for growth, repair, and maintenance of body tissues. Inadequate intake can lead to severe malnutrition.",
     "url": null
   },
@@ -176,12 +90,8 @@
     "title": "Iron Deficiency Anaemia",
     "year": 2001,
     "section": "Consequences",
-    "nutrients": [
-      "iron"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["iron"],
+    "ageGroups": ["all"],
     "passage": "Iron deficiency is a leading cause of anemia, impacting cognitive development in children and work capacity in adults.",
     "url": null
   },
@@ -191,12 +101,8 @@
     "title": "Vitamin and mineral requirements in human nutrition",
     "year": 2004,
     "section": "Calcium",
-    "nutrients": [
-      "calcium"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["calcium"],
+    "ageGroups": ["all"],
     "passage": "Calcium is crucial for bone health and muscle function. Low intake is linked to osteoporosis and bone fractures in later life.",
     "url": null
   },
@@ -206,13 +112,8 @@
     "title": "Nutrient Requirements for Indians",
     "year": 2020,
     "section": "Bone Health",
-    "nutrients": [
-      "calcium"
-    ],
-    "ageGroups": [
-      "child",
-      "teen"
-    ],
+    "nutrients": ["calcium"],
+    "ageGroups": ["child", "teen"],
     "passage": "High calcium requirements during childhood and adolescence are critical for achieving peak bone mass.",
     "url": null
   },
@@ -222,12 +123,8 @@
     "title": "Vitamin and mineral requirements in human nutrition",
     "year": 2004,
     "section": "Zinc",
-    "nutrients": [
-      "zinc"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["zinc"],
+    "ageGroups": ["all"],
     "passage": "Zinc plays a vital role in immune function, DNA synthesis, and cell division.",
     "url": null
   },
@@ -237,12 +134,8 @@
     "title": "Vitamin and mineral requirements in human nutrition",
     "year": 2004,
     "section": "Vitamin C",
-    "nutrients": [
-      "vitaminC"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["vitaminC"],
+    "ageGroups": ["all"],
     "passage": "Vitamin C is an antioxidant that supports the immune system and enhances iron absorption.",
     "url": null
   },
@@ -252,12 +145,8 @@
     "title": "Vitamin and mineral requirements in human nutrition",
     "year": 2004,
     "section": "Vitamin A",
-    "nutrients": [
-      "vitaminA"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["vitaminA"],
+    "ageGroups": ["all"],
     "passage": "Vitamin A is essential for vision, immune function, and cell growth.",
     "url": null
   },
@@ -267,12 +156,8 @@
     "title": "Vitamin and mineral requirements in human nutrition",
     "year": 2004,
     "section": "Vitamin D",
-    "nutrients": [
-      "vitaminD"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["vitaminD"],
+    "ageGroups": ["all"],
     "passage": "Vitamin D is essential for calcium absorption and bone health.",
     "url": null
   },
@@ -282,13 +167,8 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Fats and Oils",
-    "nutrients": [
-      "totalFat"
-    ],
-    "ageGroups": [
-      "adult",
-      "elderly"
-    ],
+    "nutrients": ["totalFat"],
+    "ageGroups": ["adult", "elderly"],
     "passage": "Excessive intake of total fats, especially saturated and trans fats, is linked to obesity and metabolic syndrome.",
     "url": null
   },
@@ -298,14 +178,8 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Sugar",
-    "nutrients": [
-      "totalSugar",
-      "addedSugar"
-    ],
-    "ageGroups": [
-      "child",
-      "teen"
-    ],
+    "nutrients": ["totalSugar", "addedSugar"],
+    "ageGroups": ["child", "teen"],
     "passage": "High consumption of sugar-sweetened beverages and snacks displacing nutritious foods is a major concern for children's dental and metabolic health.",
     "url": null
   },
@@ -315,12 +189,8 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Elderly",
-    "nutrients": [
-      "sodium"
-    ],
-    "ageGroups": [
-      "elderly"
-    ],
+    "nutrients": ["sodium"],
+    "ageGroups": ["elderly"],
     "passage": "Older adults are more susceptible to hypertension; reducing sodium intake is critical for managing cardiovascular risk.",
     "url": null
   },
@@ -330,12 +200,8 @@
     "title": "Trans Fat Regulations",
     "year": 2022,
     "section": "Limits",
-    "nutrients": [
-      "transFat"
-    ],
-    "ageGroups": [
-      "all"
-    ],
+    "nutrients": ["transFat"],
+    "ageGroups": ["all"],
     "passage": "FSSAI mandates that industrial trans fats be limited to no more than 2% by mass of the total oils/fats present in a food product.",
     "url": null
   },
@@ -345,13 +211,8 @@
     "title": "Guideline: Potassium intake for adults and children",
     "year": 2012,
     "section": "Recommendation",
-    "nutrients": [
-      "potassium"
-    ],
-    "ageGroups": [
-      "adult",
-      "elderly"
-    ],
+    "nutrients": ["potassium"],
+    "ageGroups": ["adult", "elderly"],
     "passage": "WHO recommends an increase in potassium intake from food to reduce blood pressure and risk of cardiovascular disease.",
     "url": null
   },
@@ -361,13 +222,42 @@
     "title": "Dietary Guidelines for Indians",
     "year": 2020,
     "section": "Elderly",
-    "nutrients": [
-      "protein"
-    ],
-    "ageGroups": [
-      "elderly"
-    ],
+    "nutrients": ["protein"],
+    "ageGroups": ["elderly"],
     "passage": "Adequate protein intake is essential for older adults to prevent sarcopenia and maintain muscle mass.",
     "url": null
   }
-]
+];
+
+// Append citations
+const updatedCitations = [...citations, ...newCitations];
+fs.writeFileSync(citationsFile, JSON.stringify(updatedCitations, null, 2));
+
+const newAdditives = {
+  "INS 171": { "name": "Titanium Dioxide", "type": "Colour", "description": "White food colour; concerns over nanoparticle toxicity", "risk": "High" },
+  "INS 319": { "name": "Tert-butylhydroquinone (TBHQ)", "type": "Antioxidant", "description": "Synthetic antioxidant; potential immune effects", "risk": "High" },
+  "INS 102": { "name": "Tartrazine", "type": "Colour", "description": "Yellow food colour; potential allergic reactions and hyperactivity", "risk": "Medium" },
+  "INS 110": { "name": "Sunset Yellow FCF", "type": "Colour", "description": "Orange food colour; associated with hyperactivity in children", "risk": "Medium" },
+  "INS 122": { "name": "Carmoisine", "type": "Colour", "description": "Red food colour; associated with hyperactivity", "risk": "Medium" },
+  "INS 211": { "name": "Sodium Benzoate", "type": "Preservative", "description": "Common preservative; can form benzene in presence of Vitamin C", "risk": "Low" },
+  "INS 955": { "name": "Sucralose", "type": "Sweetener", "description": "Artificial sweetener; may affect gut microbiome", "risk": "Low" },
+  "INS 951": { "name": "Aspartame", "type": "Sweetener", "description": "Artificial sweetener; caution advised for PKU patients", "risk": "Low" },
+  "INS 330": { "name": "Citric Acid", "type": "Acidity Regulator", "description": "Natural acidity regulator and preservative", "risk": "Low" },
+  "INS 412": { "name": "Guar Gum", "type": "Thickener", "description": "Natural thickener and stabilizer from guar beans", "risk": "Low" },
+  "INS 415": { "name": "Xanthan Gum", "type": "Thickener", "description": "Common stabilizer and thickener", "risk": "Low" },
+  "INS 440": { "name": "Pectins", "type": "Gelling Agent", "description": "Natural gelling agent from fruits", "risk": "Low" },
+  "INS 300": { "name": "Ascorbic Acid", "type": "Antioxidant", "description": "Vitamin C; used as an antioxidant", "risk": "Low" },
+  "INS 471": { "name": "Mono- and di-glycerides of fatty acids", "type": "Emulsifier", "description": "Common emulsifier; usually plant or animal derived", "risk": "Low" },
+  "INS 621": { "name": "Monosodium Glutamate (MSG)", "type": "Flavour Enhancer", "description": "Savoury flavour enhancer; some people report sensitivity", "risk": "Low" },
+  "INS 338": { "name": "Phosphoric Acid", "type": "Acidity Regulator", "description": "Provides tartness in colas; high intake linked to lower bone density", "risk": "Low" },
+  "INS 150c": { "name": "Ammonia Caramel", "type": "Colour", "description": "Brown food colour; contains low levels of 4-MEI", "risk": "Low" },
+  "INS 150d": { "name": "Sulphite Ammonia Caramel", "type": "Colour", "description": "Brown food colour; contains low levels of 4-MEI", "risk": "Low" },
+  "INS 223": { "name": "Sodium Metabisulphite", "type": "Preservative", "description": "Sulphite preservative; can trigger asthma in sensitive individuals", "risk": "Low" },
+  "INS 320": { "name": "Butylated Hydroxyanisole (BHA)", "type": "Antioxidant", "description": "Synthetic antioxidant; potential endocrine disruptor", "risk": "High" }
+};
+
+// Merge additives
+const updatedAdditives = { ...additives, ...newAdditives };
+fs.writeFileSync(additivesFile, JSON.stringify(updatedAdditives, null, 2));
+
+console.log('Successfully added 20 citations and 20 additives.');

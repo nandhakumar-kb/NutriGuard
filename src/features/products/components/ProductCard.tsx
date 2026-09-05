@@ -10,16 +10,14 @@ interface ProductCardProps {
   nutrition: any;
   score?: number;
   grade?: string;
-  mockScore?: number;
-  mockGrade?: string;
 }
 
 export function ProductCard(props: ProductCardProps) {
-  const { id, name, brand, category, image, nutrition, score, grade, mockScore, mockGrade } = props;
+  const { id, name, brand, category, image, nutrition, score, grade } = props;
 
-  // Use dynamic scores if available, otherwise mock scores, otherwise default
-  const displayScore = score ?? mockScore ?? 50;
-  const displayGrade = grade ?? mockGrade ?? 'C';
+  // Use dynamic scores if available, otherwise default
+  const displayScore = score ?? 50;
+  const displayGrade = grade ?? 'C';
 
   // Category Color Map (Subdued, professional colors)
   const getCategoryColor = (cat: string) => {

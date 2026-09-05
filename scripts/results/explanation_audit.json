@@ -1,0 +1,42 @@
+[
+  {
+    "Nutrient": "calories",
+    "CitationsFound": 0,
+    "AgeGroupsCovered": "NONE"
+  },
+  {
+    "Nutrient": "totalSugar",
+    "CitationsFound": 1,
+    "AgeGroupsCovered": "all"
+  },
+  {
+    "Nutrient": "addedSugar",
+    "CitationsFound": 1,
+    "AgeGroupsCovered": "all"
+  },
+  {
+    "Nutrient": "sodium",
+    "CitationsFound": 2,
+    "AgeGroupsCovered": "child, teen, adult, elderly"
+  },
+  {
+    "Nutrient": "saturatedFat",
+    "CitationsFound": 0,
+    "AgeGroupsCovered": "NONE"
+  },
+  {
+    "Nutrient": "transFat",
+    "CitationsFound": 1,
+    "AgeGroupsCovered": "all"
+  },
+  {
+    "Nutrient": "cholesterol",
+    "CitationsFound": 0,
+    "AgeGroupsCovered": "NONE"
+  },
+  {
+    "Nutrient": "caffeine",
+    "CitationsFound": 0,
+    "AgeGroupsCovered": "NONE"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "total": 100,
+  "schemaValid": 100,
+  "schemaInvalid": 0,
+  "numericErrors": 0,
+  "missingUnits": 0,
+  "missingIngredientsList": 0,
+  "invalidAdditivesList": 0
+}

@@ -10,5 +10,125 @@
     "type": "Acidity Regulator",
     "description": "Used as a raising agent",
     "risk": "Low"
+  },
+  "INS 171": {
+    "name": "Titanium Dioxide",
+    "type": "Colour",
+    "description": "White food colour; concerns over nanoparticle toxicity",
+    "risk": "High"
+  },
+  "INS 319": {
+    "name": "Tert-butylhydroquinone (TBHQ)",
+    "type": "Antioxidant",
+    "description": "Synthetic antioxidant; potential immune effects",
+    "risk": "High"
+  },
+  "INS 102": {
+    "name": "Tartrazine",
+    "type": "Colour",
+    "description": "Yellow food colour; potential allergic reactions and hyperactivity",
+    "risk": "Medium"
+  },
+  "INS 110": {
+    "name": "Sunset Yellow FCF",
+    "type": "Colour",
+    "description": "Orange food colour; associated with hyperactivity in children",
+    "risk": "Medium"
+  },
+  "INS 122": {
+    "name": "Carmoisine",
+    "type": "Colour",
+    "description": "Red food colour; associated with hyperactivity",
+    "risk": "Medium"
+  },
+  "INS 211": {
+    "name": "Sodium Benzoate",
+    "type": "Preservative",
+    "description": "Common preservative; can form benzene in presence of Vitamin C",
+    "risk": "Low"
+  },
+  "INS 955": {
+    "name": "Sucralose",
+    "type": "Sweetener",
+    "description": "Artificial sweetener; may affect gut microbiome",
+    "risk": "Low"
+  },
+  "INS 951": {
+    "name": "Aspartame",
+    "type": "Sweetener",
+    "description": "Artificial sweetener; caution advised for PKU patients",
+    "risk": "Low"
+  },
+  "INS 330": {
+    "name": "Citric Acid",
+    "type": "Acidity Regulator",
+    "description": "Natural acidity regulator and preservative",
+    "risk": "Low"
+  },
+  "INS 412": {
+    "name": "Guar Gum",
+    "type": "Thickener",
+    "description": "Natural thickener and stabilizer from guar beans",
+    "risk": "Low"
+  },
+  "INS 415": {
+    "name": "Xanthan Gum",
+    "type": "Thickener",
+    "description": "Common stabilizer and thickener",
+    "risk": "Low"
+  },
+  "INS 440": {
+    "name": "Pectins",
+    "type": "Gelling Agent",
+    "description": "Natural gelling agent from fruits",
+    "risk": "Low"
+  },
+  "INS 300": {
+    "name": "Ascorbic Acid",
+    "type": "Antioxidant",
+    "description": "Vitamin C; used as an antioxidant",
+    "risk": "Low"
+  },
+  "INS 471": {
+    "name": "Mono- and di-glycerides of fatty acids",
+    "type": "Emulsifier",
+    "description": "Common emulsifier; usually plant or animal derived",
+    "risk": "Low"
+  },
+  "INS 621": {
+    "name": "Monosodium Glutamate (MSG)",
+    "type": "Flavour Enhancer",
+    "description": "Savoury flavour enhancer; some people report sensitivity",
+    "risk": "Low"
+  },
+  "INS 338": {
+    "name": "Phosphoric Acid",
+    "type": "Acidity Regulator",
+    "description": "Provides tartness in colas; high intake linked to lower bone density",
+    "risk": "Low"
+  },
+  "INS 150c": {
+    "name": "Ammonia Caramel",
+    "type": "Colour",
+    "description": "Brown food colour; contains low levels of 4-MEI",
+    "risk": "Low"
+  },
+  "INS 150d": {
+    "name": "Sulphite Ammonia Caramel",
+    "type": "Colour",
+    "description": "Brown food colour; contains low levels of 4-MEI",
+    "risk": "Low"
+  },
+  "INS 223": {
+    "name": "Sodium Metabisulphite",
+    "type": "Preservative",
+    "description": "Sulphite preservative; can trigger asthma in sensitive individuals",
+    "risk": "Low"
+  },
+  "INS 320": {
+    "name": "Butylated Hydroxyanisole (BHA)",
+    "type": "Antioxidant",
+    "description": "Synthetic antioxidant; potential endocrine disruptor",
+    "risk": "High"
   }
 }

@@ -1,0 +1,1402 @@
+[
+  {
+    "id": 1,
+    "name": "5 Star",
+    "components": {
+      "N": 5,
+      "I": 26,
+      "P": 90,
+      "A": 81
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 23,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 2,
+    "name": "Amul 99% Cacao",
+    "components": {
+      "N": 34,
+      "I": 46,
+      "P": 100,
+      "A": 81
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 3,
+    "name": "Amul Bitter Chocolate",
+    "components": {
+      "N": 18,
+      "I": 34,
+      "P": 100,
+      "A": 81
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 4,
+    "name": "Amul Buttermilk",
+    "components": {
+      "N": 77,
+      "I": 51,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.7,
+    "cliffPenalty": 0,
+    "baselineScore": 60,
+    "baselineGrade": "B"
+  },
+  {
+    "id": 5,
+    "name": "Amul Dark Chocolate",
+    "components": {
+      "N": 7,
+      "I": 34,
+      "P": 100,
+      "A": 81
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 26,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 6,
+    "name": "Amul Sugar Free Chocolate",
+    "components": {
+      "N": 36,
+      "I": 42,
+      "P": 100,
+      "A": 81
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 7,
+    "name": "Amul Taaza Milk",
+    "components": {
+      "N": 72,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 90,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 8,
+    "name": "Amul Tricone",
+    "components": {
+      "N": 36,
+      "I": 40,
+      "P": 100,
+      "A": 65
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 34,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 9,
+    "name": "Arokya Full Cream Milk",
+    "components": {
+      "N": 81,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 93,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 10,
+    "name": "Arun Butterscotch",
+    "components": {
+      "N": 25,
+      "I": 33,
+      "P": 100,
+      "A": 50
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 27,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 11,
+    "name": "Arun Chocolate Ice Cream",
+    "components": {
+      "N": 21,
+      "I": 25,
+      "P": 100,
+      "A": 69
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 28,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 12,
+    "name": "Bingo Original",
+    "components": {
+      "N": 41,
+      "I": 46,
+      "P": 100,
+      "A": 67
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 13,
+    "name": "Aquafina Water",
+    "components": {
+      "N": 97,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 99,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 14,
+    "name": "Boost",
+    "components": {
+      "N": 33,
+      "I": 41,
+      "P": 100,
+      "A": 37
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 15,
+    "name": "Bourbon",
+    "components": {
+      "N": 12,
+      "I": 15,
+      "P": 90,
+      "A": 92
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 26,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 16,
+    "name": "Britannia Good Day Butter",
+    "components": {
+      "N": 27,
+      "I": 20,
+      "P": 90,
+      "A": 46
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 25,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 17,
+    "name": "Britannia Good Day Cashew",
+    "components": {
+      "N": 26,
+      "I": 20,
+      "P": 90,
+      "A": 42
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 24,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 18,
+    "name": "Britannia Good Day Choco Chip",
+    "components": {
+      "N": 15,
+      "I": 20,
+      "P": 90,
+      "A": 25
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 18,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 19,
+    "name": "Britannia Good Day Pista Badam",
+    "components": {
+      "N": 26,
+      "I": 19,
+      "P": 90,
+      "A": 10
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 19,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 20,
+    "name": "Britannia Marie Gold",
+    "components": {
+      "N": 25,
+      "I": 28,
+      "P": 90,
+      "A": 18
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 21,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 21,
+    "name": "Britannia NutriChoice 5 Grain",
+    "components": {
+      "N": 32,
+      "I": 35,
+      "P": 100,
+      "A": 42
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 22,
+    "name": "Britannia NutriChoice Digestive",
+    "components": {
+      "N": 43,
+      "I": 35,
+      "P": 100,
+      "A": 29
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 30,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 23,
+    "name": "Britannia NutriChoice Milk Biscuits",
+    "components": {
+      "N": 33,
+      "I": 35,
+      "P": 100,
+      "A": 25
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 26,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 24,
+    "name": "Britannia NutriChoice Orange Biscuits",
+    "components": {
+      "N": 36,
+      "I": 35,
+      "P": 100,
+      "A": 10
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 25,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 25,
+    "name": "Britannia Tiger",
+    "components": {
+      "N": 18,
+      "I": 20,
+      "P": 90,
+      "A": 0
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 15,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 26,
+    "name": "Britannia Treat Jim Jam",
+    "components": {
+      "N": 14,
+      "I": 20,
+      "P": 90,
+      "A": 14
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 16,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 27,
+    "name": "Britannia Treat Orange Creme",
+    "components": {
+      "N": 14,
+      "I": 20,
+      "P": 100,
+      "A": 8
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 16,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 28,
+    "name": "Cadbury Bournville Cranberry",
+    "components": {
+      "N": 7,
+      "I": 30,
+      "P": 90,
+      "A": 62
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 21,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 29,
+    "name": "Cadbury Dairy Milk",
+    "components": {
+      "N": 5,
+      "I": 32,
+      "P": 90,
+      "A": 62
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 21,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 30,
+    "name": "Cadbury Perk",
+    "components": {
+      "N": 6,
+      "I": 29,
+      "P": 90,
+      "A": 29
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 16,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 31,
+    "name": "Cavin's Chocolate Milkshake",
+    "components": {
+      "N": 42,
+      "I": 43,
+      "P": 100,
+      "A": 73
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 32,
+    "name": "Cavin's Spiced Buttermilk",
+    "components": {
+      "N": 81,
+      "I": 55,
+      "P": 100,
+      "A": 62
+    },
+    "scale": 0.7,
+    "cliffPenalty": 0,
+    "baselineScore": 60,
+    "baselineGrade": "B"
+  },
+  {
+    "id": 33,
+    "name": "Cavin's Vanilla Milkshake",
+    "components": {
+      "N": 45,
+      "I": 47,
+      "P": 100,
+      "A": 59
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 34,
+    "name": "Coca-Cola",
+    "components": {
+      "N": 48,
+      "I": 47,
+      "P": 90,
+      "A": 54
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 35,
+    "name": "Complan Royale Chocolate",
+    "components": {
+      "N": 17,
+      "I": 42,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 36,
+    "name": "Dark Fantasy Chocolate Milkshake",
+    "components": {
+      "N": 42,
+      "I": 38,
+      "P": 100,
+      "A": 63
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 37,
+    "name": "Diet Coke",
+    "components": {
+      "N": 50,
+      "I": 55,
+      "P": 90,
+      "A": 6
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 31,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 38,
+    "name": "Diet Pepsi",
+    "components": {
+      "N": 50,
+      "I": 55,
+      "P": 90,
+      "A": 2
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 30,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 39,
+    "name": "Farmley Almond Kernels",
+    "components": {
+      "N": 67,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 89,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 40,
+    "name": "Farmley Pumpkin Seeds",
+    "components": {
+      "N": 63,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 87,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 41,
+    "name": "Farmley Sunflower Seeds",
+    "components": {
+      "N": 70,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 89,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 42,
+    "name": "Frooti Mango Drink",
+    "components": {
+      "N": 38,
+      "I": 47,
+      "P": 90,
+      "A": 29
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 43,
+    "name": "Happilo Premium Californian Almonds",
+    "components": {
+      "N": 70,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 90,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 44,
+    "name": "Hershey's Chocolate Milkshake",
+    "components": {
+      "N": 23,
+      "I": 42,
+      "P": 100,
+      "A": 54
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 28,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 45,
+    "name": "Hershey's Vanilla Milkshake",
+    "components": {
+      "N": 25,
+      "I": 42,
+      "P": 90,
+      "A": 50
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 27,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 46,
+    "name": "Horlicks Classic Malt",
+    "components": {
+      "N": 24,
+      "I": 50,
+      "P": 100,
+      "A": 54
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 47,
+    "name": "Kellogg's Chocos",
+    "components": {
+      "N": 33,
+      "I": 47,
+      "P": 90,
+      "A": 100
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 38,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 48,
+    "name": "Kellogg's Muesli",
+    "components": {
+      "N": 39,
+      "I": 35,
+      "P": 90,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 34,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 49,
+    "name": "Kellogg's Muesli Fruit Nut & Seeds",
+    "components": {
+      "N": 43,
+      "I": 53,
+      "P": 90,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 38,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 50,
+    "name": "Kurkure Chilli Chatka",
+    "components": {
+      "N": 38,
+      "I": 53,
+      "P": 100,
+      "A": 63
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 51,
+    "name": "Kurkure Masala Munch",
+    "components": {
+      "N": 50,
+      "I": 49,
+      "P": 100,
+      "A": 63
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 39,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 52,
+    "name": "Lay's American Style Cream & Onion",
+    "components": {
+      "N": 40,
+      "I": 40,
+      "P": 100,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 53,
+    "name": "Lay's Chile Limon",
+    "components": {
+      "N": 38,
+      "I": 46,
+      "P": 100,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 54,
+    "name": "Lay's Classic",
+    "components": {
+      "N": 39,
+      "I": 54,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 38,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 55,
+    "name": "Lay's Hot & Sweet Chilli",
+    "components": {
+      "N": 41,
+      "I": 39,
+      "P": 100,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 56,
+    "name": "Lay's India's Magic Masala",
+    "components": {
+      "N": 40,
+      "I": 50,
+      "P": 100,
+      "A": 0
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 27,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 57,
+    "name": "Lay's Tomato Tango",
+    "components": {
+      "N": 41,
+      "I": 43,
+      "P": 100,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 58,
+    "name": "Maaza",
+    "components": {
+      "N": 40,
+      "I": 47,
+      "P": 90,
+      "A": 29
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 30,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 59,
+    "name": "Magnum Almond",
+    "components": {
+      "N": 39,
+      "I": 31,
+      "P": 100,
+      "A": 80
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 60,
+    "name": "Magnum Chocolate",
+    "components": {
+      "N": 38,
+      "I": 45,
+      "P": 100,
+      "A": 80
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 61,
+    "name": "Makino Roasted Masala Cashews",
+    "components": {
+      "N": 58,
+      "I": 59,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.7,
+    "cliffPenalty": 0,
+    "baselineScore": 55,
+    "baselineGrade": "C+"
+  },
+  {
+    "id": 62,
+    "name": "Manna Health Mix",
+    "components": {
+      "N": 81,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 93,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 63,
+    "name": "MilkyMist Buttermilk",
+    "components": {
+      "N": 68,
+      "I": 59,
+      "P": 100,
+      "A": 96
+    },
+    "scale": 0.7,
+    "cliffPenalty": 0,
+    "baselineScore": 63,
+    "baselineGrade": "B"
+  },
+  {
+    "id": 64,
+    "name": "MilkyMist Chocolate Milkshake",
+    "components": {
+      "N": 41,
+      "I": 51,
+      "P": 100,
+      "A": 63
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 65,
+    "name": "MilkyMist Ice Cream Bar",
+    "components": {
+      "N": 50,
+      "I": 34,
+      "P": 100,
+      "A": 80
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 40,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 66,
+    "name": "MilkyMist Vanilla Milkshake",
+    "components": {
+      "N": 46,
+      "I": 46,
+      "P": 100,
+      "A": 59
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 37,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 67,
+    "name": "Mirinda",
+    "components": {
+      "N": 50,
+      "I": 43,
+      "P": 90,
+      "A": 0
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 29,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 68,
+    "name": "Nandini Toned Milk",
+    "components": {
+      "N": 77,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 92,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 69,
+    "name": "Nestlé KitKat",
+    "components": {
+      "N": 13,
+      "I": 35,
+      "P": 90,
+      "A": 71
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 26,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 70,
+    "name": "Nestlé Milkybar",
+    "components": {
+      "N": 10,
+      "I": 48,
+      "P": 100,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 30,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 71,
+    "name": "Nestlé Munch",
+    "components": {
+      "N": 9,
+      "I": 26,
+      "P": 90,
+      "A": 67
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 23,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 72,
+    "name": "Oreo Chocolate Creme",
+    "components": {
+      "N": 11,
+      "I": 24,
+      "P": 90,
+      "A": 39
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 19,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 73,
+    "name": "Oreo Vanilla Creme",
+    "components": {
+      "N": 11,
+      "I": 24,
+      "P": 90,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 28,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 74,
+    "name": "Paper Boat Aamras",
+    "components": {
+      "N": 48,
+      "I": 49,
+      "P": 90,
+      "A": 88
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 42,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 75,
+    "name": "Paper Boat Coconut Water",
+    "components": {
+      "N": 50,
+      "I": 50,
+      "P": 90,
+      "A": 37
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 35,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 76,
+    "name": "Parle Hide & Seek",
+    "components": {
+      "N": 17,
+      "I": 31,
+      "P": 90,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 30,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 77,
+    "name": "Pepsi",
+    "components": {
+      "N": 47,
+      "I": 47,
+      "P": 90,
+      "A": 37
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 33,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 78,
+    "name": "Pluckk Tender Coconut Water",
+    "components": {
+      "N": 89,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 96,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 79,
+    "name": "Pran Potata Spicy Biscuit",
+    "components": {
+      "N": 27,
+      "I": 35,
+      "P": 100,
+      "A": 85
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 33,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 80,
+    "name": "Raw Pressery Coconut Water",
+    "components": {
+      "N": 74,
+      "I": 100,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 83,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 81,
+    "name": "Real Coconut Water",
+    "components": {
+      "N": 84,
+      "I": 59,
+      "P": 100,
+      "A": 54
+    },
+    "scale": 0.7,
+    "cliffPenalty": 0,
+    "baselineScore": 60,
+    "baselineGrade": "B"
+  },
+  {
+    "id": 82,
+    "name": "Slice Mango Drink",
+    "components": {
+      "N": 35,
+      "I": 47,
+      "P": 90,
+      "A": 18
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 26,
+    "baselineGrade": "D+"
+  },
+  {
+    "id": 83,
+    "name": "Sunfeast Dark Fantasy Choco Fills",
+    "components": {
+      "N": 12,
+      "I": 20,
+      "P": 90,
+      "A": 39
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 19,
+    "baselineGrade": "D"
+  },
+  {
+    "id": 84,
+    "name": "Taali Masala Cashews",
+    "components": {
+      "N": 47,
+      "I": 43,
+      "P": 100,
+      "A": 67
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 38,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 85,
+    "name": "Tata Sampann Premium Almonds",
+    "components": {
+      "N": 75,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 91,
+    "baselineGrade": "A+"
+  },
+  {
+    "id": 86,
+    "name": "Tata Soulfull Choco Muesli",
+    "components": {
+      "N": 42,
+      "I": 57,
+      "P": 90,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 41,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 87,
+    "name": "Tata Soulfull Millet Muesli",
+    "components": {
+      "N": 50,
+      "I": 57,
+      "P": 90,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 44,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 88,
+    "name": "Thums Up",
+    "components": {
+      "N": 48,
+      "I": 43,
+      "P": 90,
+      "A": 54
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 89,
+    "name": "Too Yumm NutriChips",
+    "components": {
+      "N": 48,
+      "I": 51,
+      "P": 100,
+      "A": 46
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 90,
+    "name": "Too Yumm Veggix",
+    "components": {
+      "N": 50,
+      "I": 47,
+      "P": 100,
+      "A": 67
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 40,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 91,
+    "name": "True Elements Raw Pumpkin Seeds",
+    "components": {
+      "N": 60,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 86,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 92,
+    "name": "True Elements Raw Sunflower Seeds",
+    "components": {
+      "N": 69,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 89,
+    "baselineGrade": "A"
+  },
+  {
+    "id": 93,
+    "name": "Yoga Bar Blueberry Protein Bar",
+    "components": {
+      "N": 43,
+      "I": 54,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 39,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 94,
+    "name": "Yoga Bar Choco Chunk Protein Bar",
+    "components": {
+      "N": 50,
+      "I": 60,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 42,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 95,
+    "name": "Yoga Bar Dark Chocolate Protein Bar",
+    "components": {
+      "N": 50,
+      "I": 54,
+      "P": 100,
+      "A": 96
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 45,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 96,
+    "name": "Yoga Bar Fruit & Nut Protein Bar",
+    "components": {
+      "N": 38,
+      "I": 45,
+      "P": 100,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 36,
+    "baselineGrade": "C-"
+  },
+  {
+    "id": 97,
+    "name": "Yoga Bar Millet Muesli",
+    "components": {
+      "N": 50,
+      "I": 56,
+      "P": 90,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 41,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 98,
+    "name": "Yoga Bar Muesli",
+    "components": {
+      "N": 50,
+      "I": 60,
+      "P": 90,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 41,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 99,
+    "name": "Yoga Bar Nuts & Fruits Muesli",
+    "components": {
+      "N": 50,
+      "I": 61,
+      "P": 90,
+      "A": 75
+    },
+    "scale": 0.5,
+    "cliffPenalty": 0,
+    "baselineScore": 42,
+    "baselineGrade": "C"
+  },
+  {
+    "id": 100,
+    "name": "Yoga Bar Pumpkin Seeds",
+    "components": {
+      "N": 75,
+      "I": 100,
+      "P": 100,
+      "A": 100
+    },
+    "scale": 1,
+    "cliffPenalty": 0,
+    "baselineScore": 91,
+    "baselineGrade": "A+"
+  }
+]

@@ -53,6 +53,9 @@ NutriGuard is built as a Progressive Web App (PWA).
 ```text
 nutriguard/
 ├── public/                     # High-quality graphical assets, icons, and fonts
+├── scripts/                    # Scripts for algorithm evaluation and dataset generation
+│   ├── evaluation/             # Test suites for scoring engine validation
+│   └── results/                # Output analysis, CSVs, and generated charts
 ├── src/                        # Main source code directory
 │   ├── components/             # Shared, generic UI components
 │   │   ├── layout/             # Structural application components
