@@ -10,6 +10,7 @@ import { getImageUrl } from '../../services/supabaseClient';
 import { useAppStore } from '@/store/useAppStore';
 import { Shield, Info } from 'lucide-react';
 import { calculateNutriGuardScore, getGradeAndColor } from '@/utils';
+import { calculateNutriScore2017 } from '@/utils/nutriScore';
 import { getConsumerAlternative, getManufacturerCounterfactual } from '@/utils/counterfactual';
 import { getNutrient } from '@/utils/normalizeNutrient';
 import type { ScoreBreakdown as ScoreBreakdownType } from '@/types';
@@ -50,10 +51,11 @@ export function Scan() {
   const activeId = id === 'custom' ? 'custom' : (id ? parseInt(id) : scanResultId);
   const [product, setProduct] = useState<any>(null);
   const [scoreData, setScoreData] = useState<ScoreBreakdownType | null>(null);
+  const [nutriScoreData, setNutriScoreData] = useState<{score: number | null, grade: string} | null>(null);
   const [ingredients, setIngredients] = useState<any[]>([]);
   const [alternatives, setAlternatives] = useState<any[]>([]);
   const [recommendations, setRecommendations] = useState<any>(null);
-  const [selectedAgeGroup, setSelectedAgeGroup] = useState<'child' | 'teen' | 'adult' | 'elderly'>('child');
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<'child' | 'teen' | 'adult' | 'elderly'>('adult');
 
   useEffect(() => {
     if (activeId) {
@@ -63,6 +65,9 @@ export function Scan() {
       // 1. Calculate Score Dynamically
       const calculatedScore = calculateNutriGuardScore(p);
       setScoreData(calculatedScore);
+      
+      const calcNutriScore = calculateNutriScore2017(p.nutrition, p.category);
+      setNutriScoreData(calcNutriScore);
 
       // 2. Map Ingredients from lookup dictionary
       const rawIngredients = typeof p.ingredients === 'string' 
@@ -182,7 +187,7 @@ export function Scan() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
           {/* Left: Scanned Product */}
-          <div className="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row p-6 lg:p-8 gap-6 lg:gap-8 lg:h-115">
+          <div className="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row p-6 lg:p-8 gap-6 lg:gap-8 h-full">
 
             {/* Left Side: Image Box */}
             <div className="w-full h-56 sm:w-1/3 sm:h-full flex items-center justify-center shrink-0">
@@ -270,7 +275,7 @@ export function Scan() {
                 </div>
 
                 {/* Row 3 */}
-                <div className="grid grid-cols-2 bg-white">
+                <div className="grid grid-cols-2 border-b border-slate-100 bg-white">
                   {/* NOVA */}
                   <div className="flex items-center p-3 gap-3 border-r border-slate-100">
                     <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-500 flex items-center justify-center shrink-0">
@@ -298,13 +303,38 @@ export function Scan() {
                     </div>
                   </div>
                 </div>
+
+                {/* Row 4: Nutri-Score */}
+                <div className="grid grid-cols-2 bg-white">
+                  {/* Baseline Nutri-Score */}
+                  <div className="flex items-center p-3 gap-3 border-r border-slate-100 col-span-2 sm:col-span-1">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 font-black text-white ${
+                      nutriScoreData?.grade === 'A' ? 'bg-[#008b4c]' :
+                      nutriScoreData?.grade === 'B' ? 'bg-[#80c342]' :
+                      nutriScoreData?.grade === 'C' ? 'bg-[#feca0b]' :
+                      nutriScoreData?.grade === 'D' ? 'bg-[#f58220]' :
+                      nutriScoreData?.grade === 'E' ? 'bg-[#ef3e22]' : 'bg-gray-400'
+                    }`}>
+                      {nutriScoreData?.grade || '?'}
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[10px] text-slate-500 font-medium uppercase tracking-wider mb-0.5 flex items-center gap-1">Nutri-Score (Baseline)</span>
+                      <span className="text-sm font-bold text-slate-900 leading-none">
+                        Grade {nutriScoreData?.grade || 'N/A'} <span className="text-xs text-gray-400 font-normal">({nutriScoreData?.score != null ? `${nutriScoreData?.score} pts` : 'No data'})</span>
+                      </span>
+                    </div>
+                  </div>
+                  {/* Empty cell or something else */}
+                  <div className="hidden sm:flex items-center p-3 gap-3">
+                  </div>
+                </div>
               </div>
 
             </div>
           </div>
 
           {/* Right: Age-Wise NutriGuard Scores */}
-          <div className="lg:col-span-6 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 flex flex-col lg:h-100">
+          <div className="lg:col-span-6 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 flex flex-col h-full">
             <div className="flex items-start justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="bg-purple-100 p-2.5 rounded-xl shadow-sm">

@@ -50,7 +50,12 @@ export function Products() {
     } else if (sortOption === 'Lowest Score') {
       return (a.score || 0) - (b.score || 0);
     }
-    return 0; // Most Popular (default)
+    // Alphabetical (default)
+    if (a.category < b.category) return -1;
+    if (a.category > b.category) return 1;
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
   });
 
   const uniqueCategories = Array.from(new Set(productsData.map(p => p.category))).filter(Boolean);
@@ -83,7 +88,7 @@ export function Products() {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-[32px] font-bold text-gray-900 leading-tight">All Products</h1>
-                <span className="bg-green-50 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-100">150+ Products</span>
+                <span className="bg-green-50 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-100">{productsData.length} Products</span>
               </div>
               <p className="text-[15px] text-gray-600">Explore and analyze packaged foods with age-aware NutriGuard scores.</p>
             </div>
@@ -91,15 +96,15 @@ export function Products() {
             <div className="flex items-center gap-3 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 hide-scrollbar">
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm shrink-0">
                 <div className="p-2.5 bg-green-50 text-green-600 rounded-xl"><Package className="w-6 h-6" strokeWidth={1.5} /></div>
-                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">150+</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Products</p></div>
+                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">{productsData.length}</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Products</p></div>
               </div>
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm shrink-0">
                 <div className="p-2.5 bg-blue-50 text-blue-500 rounded-xl"><LayoutGrid className="w-6 h-6" strokeWidth={1.5} /></div>
-                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">10</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Categories</p></div>
+                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">{uniqueCategories.length}</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Categories</p></div>
               </div>
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm shrink-0">
                 <div className="p-2.5 bg-purple-50 text-purple-600 rounded-xl"><BarChart2 className="w-6 h-6" strokeWidth={1.5} /></div>
-                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">95%</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Explainable Results</p></div>
+                <div><p className="font-bold text-gray-900 text-[17px] leading-tight">100%</p><p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">Deterministic Scores</p></div>
               </div>
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm shrink-0">
                 <div className="p-2.5 bg-orange-50 text-orange-500 rounded-xl"><Shield className="w-6 h-6" strokeWidth={1.5} /></div>
@@ -122,7 +127,7 @@ export function Products() {
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value)}
                 >
-                  <option>Most Popular</option>
+                  <option>Alphabetical</option>
                   <option>Highest Score</option>
                   <option>Lowest Score</option>
                 </select>

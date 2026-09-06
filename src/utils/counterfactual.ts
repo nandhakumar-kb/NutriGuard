@@ -100,16 +100,6 @@ export const getConsumerAlternative = (product: any, ageGroup: 'child'|'teen'|'a
     .filter(p => {
       if (p.id === product.id) return false;
       if (p.category !== product.category) return false;
-      
-      // Exact match on indulgence tier and flavor profile
-      if (p.indulgence_tier !== product.indulgence_tier) return false;
-      if (p.flavor_profile !== product.flavor_profile) return false;
-      
-      let pCals = getNutrient(p.nutrition, 'calories') || 0;
-      if (originalCalories > 0) {
-        let ratio = pCals / originalCalories;
-        if (ratio < 0.8 || ratio > 1.2) return false;
-      }
       return true;
     })
     .map(p => {
@@ -117,7 +107,7 @@ export const getConsumerAlternative = (product: any, ageGroup: 'child'|'teen'|'a
       let pAgeScore = pBreakdown.ageWise[ageGroup];
       return { ...p, score: pAgeScore.score, grade: pAgeScore.grade, gradeNum: gradeToNumber(pAgeScore.grade) };
     })
-    .filter(p => p.gradeNum > originalGradeNum);
+    .filter(p => p.score > originalBreakdown.ageWise[ageGroup].score);
   
   if (candidates.length === 0) return [];
   
