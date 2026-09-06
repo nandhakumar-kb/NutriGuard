@@ -44,7 +44,7 @@ export async function analyzeProductImage(file: File) {
   while (attempt <= maxRetries) {
     try {
       const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
+        model: "gemini-flash-latest",
         generationConfig: {
           responseMimeType: "application/json",
         }
@@ -151,7 +151,7 @@ export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup:
       `;
 
       const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
+        model: "gemini-flash-latest",
         systemInstruction: systemInstruction
       });
 
