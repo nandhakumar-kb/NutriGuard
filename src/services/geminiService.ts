@@ -99,13 +99,13 @@ const explanationCache: Record<string, RagExplanation> = {};
 /**
  * Uses Gemini API directly in the client to generate the RAG explanation for local testing.
  */
-export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup: string): Promise<RagExplanation> {
+export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup: string, category: string): Promise<RagExplanation> {
   const cacheKey = `${nutrientKey}-${ageGroup}`;
   if (explanationCache[cacheKey]) {
     return explanationCache[cacheKey];
   }
 
-  const citations = retrieveCitations(nutrientKey, ageGroup);
+  const citations = retrieveCitations(nutrientKey, ageGroup, category);
 
   if (citations.length === 0) {
     // No source found — do NOT fall back to letting the model generate from
@@ -163,6 +163,6 @@ export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup:
     return explanation;
   } catch (error) {
     console.error("RAG generation failed:", error);
-    return { text: "General health recommendation: Balance macro and micro nutrient intake.", citations: [], grounded: false };
+    return { text: "General health recommendation: Balance macro and micro nutrient intake.", citations: citations, grounded: false };
   }
 }

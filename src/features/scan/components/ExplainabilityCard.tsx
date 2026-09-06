@@ -24,7 +24,7 @@ export function ExplainabilityCard({ product, breakdown, ageGroup }: Explainabil
   useEffect(() => {
     if (domNutrient) {
       setLoadingAi(true);
-      generateRagExplanation(domNutrient.key as any, ageGroup)
+      generateRagExplanation(domNutrient.key as any, ageGroup, product.category)
         .then((res: RagExplanation) => {
           setAiExplanation(res);
           setLoadingAi(false);

@@ -1,5 +1,53 @@
 [
   {
+    "id": "who-sugar-2015-drinks",
+    "source": "WHO",
+    "title": "Guideline: Sugars intake for adults and children",
+    "year": 2015,
+    "section": "Executive summary",
+    "nutrients": ["totalSugar", "addedSugar"],
+    "ageGroups": ["all"],
+    "categories": ["Drinks", "Beverages"],
+    "passage": "There is increasing concern that intake of free sugars – particularly in the form of sugar-sweetened beverages – increases overall energy intake and may reduce the intake of foods containing more nutritionally adequate calories.",
+    "url": "/knowledge_base/WHO/WHO sugar.pdf"
+  },
+  {
+    "id": "who-sugar-2015-snacks",
+    "source": "WHO",
+    "title": "Guideline: Sugars intake for adults and children",
+    "year": 2015,
+    "section": "Background",
+    "nutrients": ["totalSugar", "addedSugar"],
+    "ageGroups": ["all"],
+    "categories": ["Biscuits", "Chocolates", "Sweets"],
+    "passage": "Free sugars contribute to the overall energy density of diets, and may promote a positive energy balance... leading to an unhealthy diet, weight gain and increased risk of NCDs.",
+    "url": "/knowledge_base/WHO/WHO sugar.pdf"
+  },
+  {
+    "id": "who-sodium-chips",
+    "source": "WHO",
+    "title": "Guideline: Sodium intake for adults and children",
+    "year": 2012,
+    "section": "Recommendation",
+    "nutrients": ["sodium"],
+    "ageGroups": ["all"],
+    "categories": ["Chips & Snacks", "Savoury Snacks", "Namkeen"],
+    "passage": "High sodium intake from processed savoury snacks is a major contributor to elevated blood pressure. WHO recommends a reduction in sodium intake to less than 2g/day in adults.",
+    "url": "/knowledge_base/WHO/WHO sodium.pdf"
+  },
+  {
+    "id": "who-fat-biscuits",
+    "source": "WHO",
+    "title": "Guideline: Fats and fatty acids in human nutrition",
+    "year": 2010,
+    "section": "Executive summary",
+    "nutrients": ["totalFat", "saturatedFat", "transFat"],
+    "ageGroups": ["all"],
+    "categories": ["Biscuits", "Cookies", "Cakes", "Chocolates"],
+    "passage": "Commercially baked goods and confectioneries often contain high levels of saturated and trans fats, which are directly linked to increased risk of cardiovascular diseases.",
+    "url": "/knowledge_base/WHO/WHO Fat.pdf"
+  },
+  {
     "id": "who-sugar-2015-01",
     "source": "WHO",
     "title": "Guideline: Sugars intake for adults and children",

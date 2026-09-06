@@ -9,19 +9,27 @@ export interface Citation {
   section: string;
   nutrients: string[];
   ageGroups: string[];
+  categories?: string[];
   passage: string;
   url: string | null;
 }
 
 const citations: Citation[] = citationsData as Citation[];
 
-export function retrieveCitations(nutrientKey: NutrientKey, ageGroup: string, maxResults = 2): Citation[] {
+export function retrieveCitations(nutrientKey: NutrientKey, ageGroup: string, category?: string, maxResults = 2): Citation[] {
   const matches = citations.filter(c => c.nutrients.includes(nutrientKey));
 
-  const specific = matches.filter(c => c.ageGroups.includes(ageGroup));
-  const general = matches.filter(c => c.ageGroups.includes('all'));
+  // Filter by age group
+  const specificAge = matches.filter(c => c.ageGroups.includes(ageGroup));
+  const generalAge = matches.filter(c => c.ageGroups.includes('all'));
+  let ageFiltered = [...specificAge, ...generalAge.filter(g => !specificAge.some(s => s.id === g.id))];
 
-  const combined = [...specific, ...general.filter(g => !specific.some(s => s.id === g.id))];
+  // Filter by category if provided and citation has categories defined
+  if (category) {
+    const specificCategory = ageFiltered.filter(c => c.categories && c.categories.includes(category));
+    const generalCategory = ageFiltered.filter(c => !c.categories || c.categories.includes('all'));
+    ageFiltered = [...specificCategory, ...generalCategory.filter(g => !specificCategory.some(s => s.id === g.id))];
+  }
 
-  return combined.slice(0, maxResults);
+  return ageFiltered.slice(0, maxResults);
 }
