@@ -5,6 +5,8 @@ import type { NutrientKey } from '@/utils/normalizeNutrient';
 // Initialize the API securely for local dev using the env var we added
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
 
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 // Helper to convert a File object to the format our backend/SDK expects
 async function fileToGenerativePart(file: File) {
   const base64EncodedDataPromise = new Promise<string>((resolve) => {
@@ -36,54 +38,65 @@ export async function analyzeProductImage(file: File) {
 
   const { inlineData } = await fileToGenerativePart(file);
 
-  try {
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-flash-latest",
-      generationConfig: {
-        responseMimeType: "application/json",
-      }
-    });
+  let attempt = 0;
+  const maxRetries = 3;
 
-    const prompt = `
-      Analyze this food product label image. 
-      Extract the following information and return it as a JSON object matching this schema:
-      {
-        "name": "Extracted product name or 'Unknown'",
-        "brand": "Extracted brand name or 'Unknown'",
-        "category": "Guess the best category (e.g. Chocolates, Biscuits, Chips & Snacks, Drinks, Dairy, etc)",
-        "serving_size": "Extracted serving size (e.g. '10g')",
-        "nutrition": {
-          "calories": number,
-          "protein": number,
-          "carbohydrates": number,
-          "totalSugars": number,
-          "addedSugars": number,
-          "totalFat": number,
-          "saturatedFat": number,
-          "transFat": number,
-          "sodium": number,
-          "fiber": number,
-          "calcium": number,
-          "cholesterol": number,
-          "caffeine": number
-        },
-        "ingredients": [
-          "list", "of", "ingredients"
-        ],
-        "allergens": [
-          "list", "of", "allergens"
-        ]
-      }
-      
-      If any nutrient value is missing, set it to undefined or null, but try your best to extract it. Normalize weights to numeric values where requested.
-    `;
+  while (attempt <= maxRetries) {
+    try {
+      const model = genAI.getGenerativeModel({ 
+        model: "gemini-1.5-flash",
+        generationConfig: {
+          responseMimeType: "application/json",
+        }
+      });
 
-    const result = await model.generateContent([prompt, { inlineData }]);
-    const text = result.response.text();
-    return JSON.parse(text);
-  } catch (error: any) {
-    console.error("OCR Analysis failed:", error);
-    throw new Error(error.message || 'Internal Server Error');
+      const prompt = `
+        Analyze this food product label image. 
+        Extract the following information and return it as a JSON object matching this schema:
+        {
+          "name": "Extracted product name or 'Unknown'",
+          "brand": "Extracted brand name or 'Unknown'",
+          "category": "Guess the best category (e.g. Chocolates, Biscuits, Chips & Snacks, Drinks, Dairy, etc)",
+          "serving_size": "Extracted serving size (e.g. '10g')",
+          "nutrition": {
+            "calories": number,
+            "protein": number,
+            "carbohydrates": number,
+            "totalSugars": number,
+            "addedSugars": number,
+            "totalFat": number,
+            "saturatedFat": number,
+            "transFat": number,
+            "sodium": number,
+            "fiber": number,
+            "calcium": number,
+            "cholesterol": number,
+            "caffeine": number
+          },
+          "ingredients": [
+            "list", "of", "ingredients"
+          ],
+          "allergens": [
+            "list", "of", "allergens"
+          ]
+        }
+        
+        If any nutrient value is missing, set it to undefined or null, but try your best to extract it. Normalize weights to numeric values where requested.
+      `;
+
+      const result = await model.generateContent([prompt, { inlineData }]);
+      const text = result.response.text();
+      return JSON.parse(text);
+    } catch (error: any) {
+      if (error.message && error.message.includes('429') && attempt < maxRetries) {
+        console.warn(`Gemini API rate limit hit in OCR. Retrying in 15 seconds... (Attempt ${attempt + 1}/${maxRetries})`);
+        await sleep(15000);
+        attempt++;
+        continue;
+      }
+      console.error("OCR Analysis failed:", error);
+      throw new Error(error.message || 'Internal Server Error');
+    }
   }
 }
 
@@ -122,50 +135,64 @@ export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup:
     return fallback;
   }
 
-  try {
-    const systemInstruction = `
-      You are the NutriGuard-AI Explanation Engine.
-      You will be given one or more retrieved guideline passages. Your ONLY job is to
-      rephrase what is in those passages into a concise (1-2 sentence), plain-language
-      explanation for a parent, specific to the given nutrient and age group.
-      Do not add any fact, number, or claim that is not present in the passages below.
-      If the passages don't fully cover the age group, say what they do cover rather
-      than extrapolating.
-    `;
+  let attempt = 0;
+  const maxRetries = 3;
 
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-flash-latest",
-      systemInstruction: systemInstruction
-    });
+  while (attempt <= maxRetries) {
+    try {
+      const systemInstruction = `
+        You are the NutriGuard-AI Explanation Engine.
+        You will be given one or more retrieved guideline passages. Your ONLY job is to
+        rephrase what is in those passages into a concise (1-2 sentence), plain-language
+        explanation for a parent, specific to the given nutrient and age group.
+        Do not add any fact, number, or claim that is not present in the passages below.
+        If the passages don't fully cover the age group, say what they do cover rather
+        than extrapolating.
+      `;
 
-    const passageText = citations
-      .map(c => `[${c.source} ${c.year}, ${c.section}]: "${c.passage}"`)
-      .join('\n');
+      const model = genAI.getGenerativeModel({ 
+        model: "gemini-1.5-flash",
+        systemInstruction: systemInstruction
+      });
 
-    const prompt = `
-      Nutrient: "${nutrientKey}"
-      Age group: "${ageGroup}"
+      const passageText = citations
+        .map(c => `[${c.source} ${c.year}, ${c.section}]: "${c.passage}"`)
+        .join('\n');
 
-      Retrieved passages (use ONLY these, rephrased in plain language):
-      ${passageText}
+      const prompt = `
+        Nutrient: "${nutrientKey}"
+        Age group: "${ageGroup}"
 
-      Write the 1-2 sentence explanation now. Do not quote the passages verbatim;
-      paraphrase them for a general audience.
-    `;
+        Retrieved passages (use ONLY these, rephrased in plain language):
+        ${passageText}
 
-    const result = await model.generateContent(prompt);
-    const explanation: RagExplanation = {
-      text: result.response.text().trim(),
-      citations,
-      grounded: true,
-    };
-    explanationCache[cacheKey] = explanation;
-    return explanation;
-  } catch (error) {
-    console.error("RAG generation failed:", error);
-    const fallbackText = citations.length > 0 
-      ? citations[0].passage 
-      : "General health recommendation: Balance macro and micro nutrient intake.";
-    return { text: fallbackText, citations: citations, grounded: citations.length > 0 };
+        Write the 1-2 sentence explanation now. Do not quote the passages verbatim;
+        paraphrase them for a general audience.
+      `;
+
+      const result = await model.generateContent(prompt);
+      const explanation: RagExplanation = {
+        text: result.response.text().trim(),
+        citations,
+        grounded: true,
+      };
+      explanationCache[cacheKey] = explanation;
+      return explanation;
+    } catch (error: any) {
+      if (error.message && error.message.includes('429') && attempt < maxRetries) {
+        console.warn(`Gemini API rate limit hit in RAG. Retrying in 15 seconds... (Attempt ${attempt + 1}/${maxRetries})`);
+        await sleep(15000);
+        attempt++;
+        continue;
+      }
+      console.error("RAG generation failed:", error);
+      const fallbackText = citations.length > 0 
+        ? citations[0].passage 
+        : "General health recommendation: Balance macro and micro nutrient intake.";
+      return { text: fallbackText, citations: citations, grounded: citations.length > 0 };
+    }
   }
+  
+  // TypeScript safety (should never reach here due to return/throw in while loop)
+  return { text: "Error", citations: [], grounded: false };
 }
