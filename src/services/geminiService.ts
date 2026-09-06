@@ -163,6 +163,9 @@ export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup:
     return explanation;
   } catch (error) {
     console.error("RAG generation failed:", error);
-    return { text: "General health recommendation: Balance macro and micro nutrient intake.", citations: citations, grounded: false };
+    const fallbackText = citations.length > 0 
+      ? citations[0].passage 
+      : "General health recommendation: Balance macro and micro nutrient intake.";
+    return { text: fallbackText, citations: citations, grounded: citations.length > 0 };
   }
 }
