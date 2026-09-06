@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateNutriGuardScore } from './scoreCalculator';
+import { calculateNutriGuardScore } from './scoring';
 
 describe('NutriGuard Score Calculator - Golden Tests', () => {
   it('should correctly score "5 Star" (High Sugar/Fat, NOVA 4)', () => {

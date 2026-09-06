@@ -7,3 +7,4 @@ export * from './IngredientChip';
 export * from './RecommendationCard';
 export * from './ScoreBreakdown';
 export * from './UploadBox';
+export * from './AgeRadarChart';

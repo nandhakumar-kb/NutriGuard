@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import {
   UploadBox, AgeScoreCard, IngredientChip,
   ScoreBreakdown, RecommendationCard,
-  ComparisonCard, CompareTable, AllergenBanner, ExplainabilityCard
+  ComparisonCard, CompareTable, AllergenBanner, ExplainabilityCard, AgeRadarChart
 } from './components';
 import { getImageUrl } from '../../services/supabaseClient';
 import { useAppStore } from '@/store/useAppStore';
@@ -187,7 +187,7 @@ export function Scan() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
           {/* Left: Scanned Product */}
-          <div className="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row p-6 lg:p-8 gap-6 lg:gap-8 h-full">
+          <div className="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row p-6 lg:p-8 gap-6 lg:gap-8">
 
             {/* Left Side: Image Box */}
             <div className="w-full h-56 sm:w-1/3 sm:h-full flex items-center justify-center shrink-0">
@@ -195,7 +195,7 @@ export function Scan() {
             </div>
 
             {/* Right Side: Details & Grid */}
-            <div className="flex flex-col flex-1 h-full">
+            <div className="flex flex-col flex-1">
                {/* Product Name & Brand */}
                <div className="mb-3">
                   <h2 className="text-[28px] lg:text-[32px] font-extrabold text-[#0f172a] leading-tight mb-1 tracking-tight">{product.name}</h2>
@@ -225,7 +225,7 @@ export function Scan() {
                </div>
 
                {/* Quick Facts Grid 3x2 */}
-               <div className="border border-gray-100 rounded-xl overflow-hidden mt-auto text-left shrink-0">
+               <div className="border border-gray-100 rounded-xl overflow-hidden mt-6 text-left shrink-0">
                 {/* Row 1 */}
                 <div className="grid grid-cols-2 border-b border-gray-100 bg-white">
                   {/* Net Weight */}
@@ -334,7 +334,7 @@ export function Scan() {
           </div>
 
           {/* Right: Age-Wise NutriGuard Scores */}
-          <div className="lg:col-span-6 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 flex flex-col h-full">
+          <div className="lg:col-span-6 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 flex flex-col">
             <div className="flex items-start justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="bg-purple-100 p-2.5 rounded-xl shadow-sm">
@@ -355,6 +355,7 @@ export function Scan() {
               <AgeScoreCard ageGroup="Adult" ageRange="19-59 yrs" {...scoreData.ageWise.adult} isSelected={selectedAgeGroup === 'adult'} onClick={() => setSelectedAgeGroup('adult')} />
               <AgeScoreCard ageGroup="Elderly" ageRange="60+ yrs" {...scoreData.ageWise.elderly} isSelected={selectedAgeGroup === 'elderly'} onClick={() => setSelectedAgeGroup('elderly')} />
             </div>
+            <AgeRadarChart product={product} ageGroup={selectedAgeGroup} />
           </div>
         </div>
 

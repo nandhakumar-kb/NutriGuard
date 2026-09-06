@@ -163,6 +163,6 @@ export async function generateRagExplanation(nutrientKey: NutrientKey, ageGroup:
     return explanation;
   } catch (error) {
     console.error("RAG generation failed:", error);
-    return { text: "An error occurred while fetching the explanation.", citations: [], grounded: false };
+    return { text: "General health recommendation: Balance macro and micro nutrient intake.", citations: [], grounded: false };
   }
 }

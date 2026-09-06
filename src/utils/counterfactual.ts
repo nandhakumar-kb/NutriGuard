@@ -1,4 +1,4 @@
-import { calculateNutriGuardScore } from './scoreCalculator';
+import { calculateNutriGuardScore } from './scoring';
 import { getNutrient, setNutrient } from './normalizeNutrient';
 
 const gradeToNumber = (grade: string) => {
@@ -94,7 +94,6 @@ export const getConsumerAlternative = (product: any, ageGroup: 'child'|'teen'|'a
   if (originalGradeNum >= 9) return []; // Already A+
   
   // Paper Section IV-N constraint: category + indulgence tier + flavor profile
-  const originalCalories = getNutrient(product.nutrition, 'calories') || 0;
   
   let candidates = allProducts
     .filter(p => {

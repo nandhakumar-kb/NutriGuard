@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SearchBar, ProductCard } from './components';
+import { SearchBar, ProductCard, ProductSkeleton } from './components';
 import { Package, LayoutGrid, BarChart2, Shield } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '@/services/supabaseClient';
 import productsJsonFallback from '@/data/products.json';
@@ -39,8 +39,12 @@ export function Products() {
 
   const filteredProducts = processedProducts.filter(product => {
     const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    const searchLower = searchQuery.toLowerCase();
+    const matchesSearch = 
+      product.name.toLowerCase().includes(searchLower) ||
+      product.brand.toLowerCase().includes(searchLower) ||
+      (product.ingredients && product.ingredients.join(' ').toLowerCase().includes(searchLower)) ||
+      (product.additives && product.additives.join(' ').toLowerCase().includes(searchLower));
     return matchesCategory && matchesSearch;
   });
 
@@ -158,8 +162,10 @@ export function Products() {
       {/* Grid section */}
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8 py-8">
         {loading ? (
-          <div className="flex justify-center items-center h-48">
-             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 mb-12">
+            {[...Array(10)].map((_, i) => (
+              <ProductSkeleton key={i} />
+            ))}
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 mb-12">

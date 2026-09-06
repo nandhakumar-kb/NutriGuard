@@ -1,1 +1,1 @@
-export * from './scoreCalculator';
+export * from './scoring';

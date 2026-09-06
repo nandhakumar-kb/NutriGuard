@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "eval": "tsx scripts/run_evaluations.ts"
+    "eval": "tsx scripts/run_evaluations.ts",
+    "sync": "node scripts/sync_all.cjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -22,6 +23,7 @@
     "react-dropzone": "^19.1.1",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.18.1",
+    "recharts": "^3.10.1",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "zustand": "^5.0.14"
